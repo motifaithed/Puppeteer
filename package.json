@@ -4,8 +4,12 @@
   "description": "KPI for learning",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"nodemon index.js"
   },
   "author": "Ronel Andaya",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.1",
+    "puppeteer": "^21.3.6"
+  }
 }
