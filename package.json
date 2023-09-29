@@ -4,12 +4,13 @@
   "description": "KPI for learning",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon cluster.js"
   },
   "author": "Ronel Andaya",
   "license": "ISC",
   "dependencies": {
     "nodemon": "^3.0.1",
-    "puppeteer": "^21.3.6"
+    "puppeteer": "^21.3.6",
+    "puppeteer-cluster": "^0.23.0"
   }
 }
