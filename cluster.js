@@ -54,7 +54,7 @@ const urls = [
           items.push({ title, price, img });
           fs.appendFile(
             "./csv/results.csv",
-            `${title},${price},${img}\n`,
+            `${title.replace(/,/g, ".")},${price},${img}\n`,
             (err) => {
               if (err) throw err;
               console.log("Saved!");
@@ -88,10 +88,6 @@ const urls = [
   for (const url of urls) {
     await cluster.queue(url);
   }
-  //   cluster.queue("http://www.google.com/");
-  //   cluster.queue("http://www.wikipedia.org/");
-  // many more pages
 
   await cluster.idle();
-  //   await cluster.close();
 })();
