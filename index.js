@@ -1,11 +1,36 @@
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-extra");
+const fs = require("fs").promises;
 
-const printWebpage = async () => {
-  const browser = await puppeteer.launch({ headless: false });
-  const page = await browser.newPage();
-  await page.goto("https://www.google.com");
-  await page.screenshot({ path: "images/google.png" });
-  await browser.close();
+const sleep = (milliseconds) => {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
 };
 
-printWebpage();
+(async () => {
+  const browser = await puppeteer.launch({ headless: false });
+  const page = await browser.newPage();
+  await page.goto("https://accounts.google.com/signin/v2/identifier", {
+    waitUntil: "networkidle2",
+  });
+
+  await page.type("#identifierId", "ronel.andaya@gmail.com");
+  await page.click("#identifierNext");
+
+  await page.waitForSelector("#password", {
+    visible: true,
+    hidden: false,
+  });
+  await page.type(
+    "#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input",
+    "wheytheman"
+  );
+  await sleep(1000);
+  await page.click("#passwordNext > div > button");
+
+  await sleep(10000);
+
+  //save cookies
+  const cookies = await page.cookies();
+  await fs.writeFile("./cookies.json", JSON.stringify(cookies, null, 2));
+
+  await browser.close();
+})();

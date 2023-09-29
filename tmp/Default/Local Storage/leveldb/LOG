@@ -1,0 +1,6 @@
+2023/09/29-15:46:04.891 2c03 Reusing MANIFEST /Users/ronelandaya/Documents/personal_projects_repo/puppeteer/tmp/Default/Local Storage/leveldb/MANIFEST-000001
+2023/09/29-15:46:04.892 2c03 Recovering log #99
+2023/09/29-15:46:04.892 2c03 Reusing old log /Users/ronelandaya/Documents/personal_projects_repo/puppeteer/tmp/Default/Local Storage/leveldb/000099.log 
+2023/09/29-15:46:11.694 2f03 Level-0 table #103: started
+2023/09/29-15:46:11.703 2f03 Level-0 table #103: 199830 bytes OK
+2023/09/29-15:46:11.714 2f03 Delete type=0 #99

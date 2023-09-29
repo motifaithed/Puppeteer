@@ -1,0 +1,14 @@
+2023/09/29-15:46:04.939 2c03 Reusing MANIFEST /Users/ronelandaya/Documents/personal_projects_repo/puppeteer/tmp/Default/Session Storage/MANIFEST-000001
+2023/09/29-15:46:04.940 2c03 Recovering log #9
+2023/09/29-15:46:04.940 2c03 Reusing old log /Users/ronelandaya/Documents/personal_projects_repo/puppeteer/tmp/Default/Session Storage/000009.log 
+2023/09/29-15:46:11.558 2f03 Level-0 table #12: started
+2023/09/29-15:46:11.569 2f03 Level-0 table #12: 27200 bytes OK
+2023/09/29-15:46:11.585 2f03 Delete type=0 #9
+2023/09/29-15:46:11.586 2f03 Compacting 4@0 + 0@1 files
+2023/09/29-15:46:11.593 2f03 Generated table #13@0: 14 keys, 4392 bytes
+2023/09/29-15:46:11.593 2f03 Compacted 4@0 + 0@1 files => 4392 bytes
+2023/09/29-15:46:11.603 2f03 compacted to: files[ 0 1 0 0 0 0 0 ]
+2023/09/29-15:46:11.603 2f03 Delete type=2 #3
+2023/09/29-15:46:11.604 2f03 Delete type=2 #12
+2023/09/29-15:46:11.604 2f03 Delete type=2 #6
+2023/09/29-15:46:11.604 2f03 Delete type=2 #9

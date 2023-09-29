@@ -1,0 +1,14 @@
+2023/09/29-15:45:50.813 2507 Reusing MANIFEST /Users/ronelandaya/Documents/personal_projects_repo/puppeteer/tmp/Default/Local Storage/leveldb/MANIFEST-000001
+2023/09/29-15:45:50.814 2507 Recovering log #96
+2023/09/29-15:45:50.814 2507 Level-0 table #98: started
+2023/09/29-15:45:50.821 2507 Level-0 table #98: 62659 bytes OK
+2023/09/29-15:45:50.829 2507 Delete type=0 #96
+2023/09/29-15:45:50.830 3a03 Compacting 4@0 + 1@1 files
+2023/09/29-15:45:50.838 3a03 Generated table #100@0: 39 keys, 422844 bytes
+2023/09/29-15:45:50.838 3a03 Compacted 4@0 + 1@1 files => 422844 bytes
+2023/09/29-15:45:50.848 3a03 compacted to: files[ 0 1 0 0 0 0 0 ]
+2023/09/29-15:45:50.849 3a03 Delete type=2 #88
+2023/09/29-15:45:50.849 3a03 Delete type=2 #98
+2023/09/29-15:45:50.849 3a03 Delete type=2 #95
+2023/09/29-15:45:50.849 3a03 Delete type=2 #93
+2023/09/29-15:45:50.849 3a03 Delete type=2 #90
