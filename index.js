@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer");
 
-const printWebpage = async () => {
+const getProductsDetail = async () => {
   const browser = await puppeteer.launch({
     headless: false,
     defaultViewport: false,
@@ -43,4 +43,4 @@ const printWebpage = async () => {
   await browser.close();
 };
 
-printWebpage();
+getProductsDetail();
