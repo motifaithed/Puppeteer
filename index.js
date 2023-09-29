@@ -1,5 +1,9 @@
+// add stealth plugin and use defaults (all evasion techniques)
 const puppeteer = require("puppeteer-extra");
 const fs = require("fs").promises;
+
+const StealthPlugin = require("puppeteer-extra-plugin-stealth");
+puppeteer.use(StealthPlugin());
 
 const sleep = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));

@@ -4,7 +4,7 @@
   "description": "KPI for learning",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon index.js"
+    "start": "nodemon cookies-test.js"
   },
   "author": "Ronel Andaya",
   "license": "ISC",
