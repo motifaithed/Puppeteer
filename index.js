@@ -1,3 +1,4 @@
+const fs = require("fs");
 const puppeteer = require("puppeteer");
 
 const getProductsDetail = async () => {
@@ -16,29 +17,61 @@ const getProductsDetail = async () => {
   const productHandles = await page.$$(
     `${productHandlesSelector} > ${productHandleSelectorClass}`
   );
-  let title = "null";
-  let price = "null";
-  let img = "null";
+
   const items = [];
-  for (const productHandle of productHandles) {
-    try {
-      title = await page.evaluate(
-        (el) => el.querySelector("h2 > a > span").textContent,
-        productHandle
-      );
-      price = await page.evaluate(
-        (el) => el.querySelector(".a-price > .a-offscreen").textContent,
-        productHandle
-      );
-      img = await page.evaluate(
-        (el) => el.querySelector(".s-image").getAttribute("src"),
-        productHandle
-      );
-      items.push({ title, price, img });
-    } catch (error) {
-      console.error("Error: ", error);
+  let PageCtr = 1;
+  const pageLimit = 3;
+  let isBtnDisabled = false;
+  while (!isBtnDisabled && PageCtr <= pageLimit) {
+    let title = "null";
+    let price = "null";
+    let img = "null";
+    for (const productHandle of productHandles) {
+      try {
+        title = await page.evaluate(
+          (el) => el.querySelector("h2 > a > span").textContent,
+          productHandle
+        );
+        price = await page.evaluate(
+          (el) => el.querySelector(".a-price > .a-offscreen").textContent,
+          productHandle
+        );
+        img = await page.evaluate(
+          (el) => el.querySelector(".s-image").getAttribute("src"),
+          productHandle
+        );
+        items.push({ title, price, img });
+        fs.appendFile(
+          "./csv/results.csv",
+          `${title},${price},${img}\n`,
+          (err) => {
+            if (err) throw err;
+            console.log("Saved!");
+          }
+        );
+      } catch (error) {
+        console.error("Error: ", error);
+      }
     }
+
+    await page.waitForSelector(
+      "a.s-pagination-item.s-pagination-next.s-pagination-button.s-pagination-separator",
+      { visible: true }
+    );
+    const is_disabled =
+      (await page.$(
+        "span.s-pagination-item.s-pagination-next.s-pagination-disabled"
+      )) !== null;
+    isBtnDisabled = is_disabled;
+    if (!isBtnDisabled) {
+      await page.click(
+        "a.s-pagination-item.s-pagination-next.s-pagination-button.s-pagination-separator"
+      );
+    }
+
+    PageCtr++;
   }
+
   console.log("ITEMS: ", items);
   await browser.close();
 };
