@@ -43,7 +43,7 @@ const getProductsDetail = async () => {
         items.push({ title, price, img });
         fs.appendFile(
           "./csv/results.csv",
-          `${title},${price},${img}\n`,
+          `${title.replace(/,/g, ".")},${price},${img}\n`,
           (err) => {
             if (err) throw err;
             console.log("Saved!");
